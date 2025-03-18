@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>MidoraX Dynamics | Contact</title>
+  <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+</head>
+<body>
+  <header>
+    <nav>
+      <h2 class="logo">MidoraX Dynamics</h2>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+        <li><a href="login.html">Login/Sign Up</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="page-content">
+    <h1>Contact Us</h1>
+    <p>We'd love to hear from you! Fill out the form below or reach us at:</p>
+    <p><i class="fas fa-envelope" style="color:#c7e617;"></i>
+      <a href="mailto:info@midorax.com">info@midorax.com</a></p>
+    <p><a href="+254105700782">
+      <i class="fas fa-phone" style="color:#2919bb;"></i>
+      : +254105700782 </a></p>    
+      <a href="https://wa.me/+254105700782?text=Hello%2C%20I%27d%20like%20to%20inquir%20on%20your%20Technology%20Solutions." target="_blank">
+        <i class="fab fa-whatsapp" style="font-size:50px; color:green;"></i>
+      </a>
+      
+
+    <form class="contact-form" action="send_mail.php" method="post">
+      <label for="name">Name:</label>
+      <input type="text" id="name" placeholder="Your Name" />
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" placeholder="Your Email" />
+
+      <label for="message">Message:</label>
+      <textarea id="message" rows="5" placeholder="Your Message"></textarea>
+
+
+      <button type="submit">Send</button>
+    </form>
+  </section>
+
+  <!-- Map Section -->
+  <section class="map-section">
+    <h2>Find Us</h2>
+    <div class="map-container">
+      <!-- Example: Google Maps Iframe -->
+      <iframe 
+      
+      src = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15955.033366806568!2d37.4575419!3d-0.5078649!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x18262d54262d9ceb:0xedf77f135231ed2e!2sUOEM%20Comp%20Lab%203!5e0!3m2!1sen!2sus!4v1681881489796!5m2!1sen!2sus"
+        width="600" 
+        height="450" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy">
+      </iframe>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 MidoraX Dynamics. All rights reserved.</p>
+  </footer>
+</body>
+</html>
