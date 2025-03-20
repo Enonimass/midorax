@@ -1,155 +1,78 @@
-/* General Reset */
+/* Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
   }
   
-  /* Body */
+  /* Global */
   body {
     font-family: Arial, sans-serif;
     background-color: #f5f5f5;
     color: #333;
   }
-  
-  /* Navigation */
-  header nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: #0c1e2b; /* Dark navy or tech-like color */
-    padding: 1rem 2rem;
-  }
-  
-  header nav .logo {
-    color: #fff;
-    font-size: 1.5rem;
-    font-weight: bold;
-  }
-  
-  header nav ul {
-    list-style: none;
-    display: flex;
-    gap: 1.5rem;
-  }
-  
-  header nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    transition: color 0.3s;
-  }
-  
-  header nav ul li a:hover,
-  header nav ul li a.active {
-    color: #00aaff;
-  }
-  
-  /* Hero Section */
-  .hero {
-    text-align: center;
-    padding: 4rem 2rem;
-    background: linear-gradient(120deg, #0c1e2b, #00354a);
-    color: #fff;
-  }
-  
-  .hero h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-  }
-  
-  .hero p {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-  }
-  
-  .hero button {
-    background-color: #00aaff;
-    color: #fff;
-    border: none;
-    padding: 0.8rem 1.5rem;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: background-color 0.3s;
-  }
-  
-  .hero button:hover {
-    background-color: #0088cc;
-  }
-  
-  /* Tech Gallery */
-  .tech-gallery {
-    padding: 2rem;
-    text-align: center;
-  }
-  
-  .tech-gallery h2 {
-    margin-bottom: 1.5rem;
-    font-size: 2rem;
-  }
-  
-  .image-grid {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-  }
-  
-  .img-container {
-    overflow: hidden;
-    border-radius: 8px;
-    transition: transform 0.3s;
-  }
-  
-  .img-container:hover {
-    transform: scale(1.05);
-  }
-  
-  .img-container img {
-    display: block;
-    width: 300px;
-    height: 200px;
-    object-fit: cover;
-  }
-  
-  /* Page Content */
-  .page-content {
-    max-width: 800px;
-    margin: 2rem auto;
-    padding: 0 1rem;
-  }
-  
-  .page-content h1 {
-    margin-bottom: 1rem;
-    font-size: 2rem;
-  }
-  
-  .page-content p {
-    line-height: 1.6;
-    margin-bottom: 1rem;
-  }
-  
-  .services-list {
-    list-style: none;
-    padding-left: 1rem;
+  body, html {
+    height: 100%;
     line-height: 1.8;
   }
   
-  /* Contact Form */
+  /* Navbar styles override if needed */
+  .w3-bar .w3-button {
+    padding: 16px;
+  }
+  
+  /* Hero Section */
+  .bgimg-1 {
+    background-position: center;
+    background-size: cover;
+    background-image: url('images/tech_background.jpg');
+    min-height: 100%;
+  }
+  
+  /* Page Header (for non-hero pages) */
+  header.w3-container {
+    background: #1396ca;
+    color: #fff;
+  }
+  
+  /* Content container */
+  .w3-container {
+    padding: 64px 16px;
+    /* background-color: rgb(15, 51, 51) */
+
+  }
+  
+  /* Contact form styling */
   .contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 0.8rem;
     max-width: 400px;
     margin-top: 1rem;
   }
-  
   .contact-form input,
   .contact-form textarea {
     padding: 0.6rem;
     font-size: 1rem;
     border: 1px solid #ccc;
     border-radius: 4px;
+    width: 100%;
+  }
+
+
+  /* Add these rules to your style.css file or within a <style> tag */
+#about {
+    opacity: 1;
+    transform: translateX(-100%);
+    transition: transform 0.8s ease-out, opacity 0.8s ease-out;
   }
   
+  #about.visible {
+    opacity: 2;
+    transform: translateX(0);
+  }
+  
+
+
+
+
   .contact-form button {
     background-color: #0c1e2b;
     color: #fff;
@@ -158,52 +81,8 @@
     cursor: pointer;
     transition: background-color 0.3s;
   }
-  
   .contact-form button:hover {
     background-color: #00aaff;
-  }
-  
-  /* Map Section */
-  .map-section {
-    text-align: center;
-    margin: 2rem 0;
-  }
-  
-  .map-container {
-    display: inline-block;
-    width: 80%;
-    max-width: 600px;
-  }
-  
-  /* Auth Container */
-  .auth-container {
-    display: flex;
-    gap: 2rem;
-    margin-top: 2rem;
-  }
-  
-  .login-box,
-  .signup-box {
-    background-color: #ffffff;
-    border-radius: 8px;
-    padding: 1rem;
-    width: 300px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  }
-  
-  .login-box h2,
-  .signup-box h2 {
-    margin-bottom: 1rem;
-    font-size: 1.2rem;
-  }
-  
-  .login-box input,
-  .signup-box input {
-    width: 100%;
-    margin-bottom: 0.8rem;
-    padding: 0.6rem;
-    border-radius: 4px;
-    border: 1px solid #ccc;
   }
   
   /* Footer */
@@ -212,18 +91,159 @@
     color: #fff;
     text-align: center;
     padding: 1rem;
-    margin-top: 2rem;
   }
   
-  /* Responsive */
+  /* Responsive adjustments */
   @media (max-width: 768px) {
-    nav ul {
-      flex-direction: column;
-      gap: 0.5rem;
-    }
-    .auth-container {
-      flex-direction: column;
-      align-items: center;
+    .w3-bar .w3-button {
+      padding: 12px;
     }
   }
   
+  /* Optional: image hover effect for gallery images */
+  .img-container {
+    overflow: hidden;
+    border-radius: 8px;
+    transition: transform 0.3s;
+  }
+  .img-container:hover {
+    transform: scale(1.05);
+  }
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Global */
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+  }
+  body, html {
+    height: 100%;
+    line-height: 1.8;
+  }
+  
+  /* Navbar styles override if needed */
+  .w3-bar .w3-button {
+    padding: 16px;
+  }
+  
+
+
+
+
+
+  #home {
+    position: relative;
+    min-height: 100vh;
+    /* Remove any direct background if using pseudo-element */
+  }
+  
+  #home::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('images/technology.webp') center/cover no-repeat;
+    opacity: 2; /* Fully visible */
+    z-index: -1;
+  }
+  
+
+
+/* Add these rules to your style.css file or within a <style> tag */
+#about {
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: transform 0.8s ease-out, opacity 0.8s ease-out;
+  }
+  
+  #about.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  
+
+
+
+
+
+
+  /* Hero Section */
+  .bgimg-1 {
+    background-position: center;
+    background-size: cover;
+    background-image: url('images/tech_background.jpg');
+    opacity: 1;
+    min-height: 100%;
+  }
+  
+  /* Page Header (for non-hero pages) */
+  header.w3-container {
+    background: #00354a;
+    color: #fff;
+  }
+  
+  /* Content container */
+  .w3-container {
+    padding: 64px 16px;
+  }
+  
+  /* Contact form styling */
+  .contact-form {
+    max-width: 400px;
+    margin-top: 1rem;
+  }
+  .contact-form input,
+  .contact-form textarea {
+    padding: 0.6rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+  }
+  .contact-form button {
+    background-color: #0c1e2b;
+    color: #fff;
+    border: none;
+    padding: 0.8rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  .contact-form button:hover {
+    background-color: #00aaff;
+  }
+  
+  /* Footer */
+  footer {
+    background-color: #0c1e2b;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .w3-bar .w3-button {
+      padding: 12px;
+    }
+  }
+  
+  /* Optional: image hover effect for gallery images */
+  .img-container {
+    overflow: hidden;
+    border-radius: 8px;
+    transition: transform 0.3s;
+  }
+  .img-container:hover {
+    transform: scale(1.05);
+  }
+    
+
+
