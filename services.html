@@ -1,44 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>MIDORAX DYNAMICS | Services</title>
-  <link rel="stylesheet" href="style.css" />
-  <script src="js/script.js" defer></script>
+  <meta charset="UTF-8">
+  <title>MidoraX Dynamics | Services</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- W3.CSS and Font Awesome -->
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+  <style>
+    body,h1,h2,h3,h4,h5,h6 { font-family: "Raleway", sans-serif; }
+  </style>
 </head>
 <body>
-  <header>
-    <nav class="navbar">
-      <div class="nav-brand">
-        <a href="index.html">MIDORAX DYNAMICS</a>
+
+  <!-- Navbar -->
+  <div class="w3-top">
+    <div class="w3-bar w3-white w3-card" id="myNavbar">
+      <a href="index.html" class="w3-bar-item w3-button w3-wide">MIDORAX</a>
+      <div class="w3-right w3-hide-small">
+        <a href="index.html" class="w3-bar-item w3-button">HOME</a>
+        <a href="about.html" class="w3-bar-item w3-button">ABOUT</a>
+        <a href="services.html" class="w3-bar-item w3-button w3-text-blue">SERVICES</a>
+        <a href="contact.html" class="w3-bar-item w3-button">CONTACT</a>
+        <a href="login.html" class="w3-bar-item w3-button">LOGIN/SIGN UP</a>
       </div>
-      <ul class="nav-menu">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="services.html" class="active">Services</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="login.html">Login/Sign Up</a></li>
-      </ul>
-      <div class="hamburger" id="hamburger">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-      </div>
-    </nav>
+      <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+  </div>
+  <!-- Sidebar -->
+  <nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
+    <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
+    <a href="index.html" onclick="w3_close()" class="w3-bar-item w3-button">HOME</a>
+    <a href="about.html" onclick="w3_close()" class="w3-bar-item w3-button">ABOUT</a>
+    <a href="services.html" onclick="w3_close()" class="w3-bar-item w3-button">SERVICES</a>
+    <a href="contact.html" onclick="w3_close()" class="w3-bar-item w3-button">CONTACT</a>
+    <a href="login.html" onclick="w3_close()" class="w3-bar-item w3-button">LOGIN/SIGN UP</a>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="w3-container w3-center w3-padding-64" style="background:#00354a; color:#fff;">
+    <h1>Our Services</h1>
+    <p>Expert solutions tailored for you.</p>
   </header>
 
-  <section class="page-content">
-    <h1>Our Services</h1>
-    <ul class="services-list">
-      <li><strong>ICT Consulting:</strong> Expert guidance on infrastructure and strategy.</li>
-      <li><strong>Software Development:</strong> Custom-built solutions to solve complex problems.</li>
-      <li><strong>Research & Analysis:</strong> In-depth exploration of emerging tech trends.</li>
-      <li><strong>Project Management:</strong> Seamless delivery from concept to launch.</li>
-    </ul>
-  </section>
+  <!-- Services Content -->
+  <div class="w3-container w3-padding-64">
+    <div class="w3-row-padding">
+      <div class="w3-col m6 l3 w3-margin-bottom">
+        <div class="w3-card-4 w3-padding">
+          <h3>ICT Consulting</h3>
+          <p>Expert guidance on infrastructure and strategy.</p>
+        </div>
+      </div>
+      <div class="w3-col m6 l3 w3-margin-bottom">
+        <div class="w3-card-4 w3-padding">
+          <h3>Software Development</h3>
+          <p>Custom-built solutions for complex problems.</p>
+        </div>
+      </div>
+      <div class="w3-col m6 l3 w3-margin-bottom">
+        <div class="w3-card-4 w3-padding">
+          <h3>Research &amp; Analysis</h3>
+          <p>In-depth exploration of emerging tech trends.</p>
+        </div>
+      </div>
+      <div class="w3-col m6 l3 w3-margin-bottom">
+        <div class="w3-card-4 w3-padding">
+          <h3>Project Management</h3>
+          <p>Seamless delivery from concept to launch.</p>
+        </div>
+      </div>
+    </div>
+  </div>
 
-  <footer>
-    <p>© 2025 MIDORAX DYNAMICS. All rights reserved.</p>
+  <!-- Footer -->
+  <footer class="w3-center w3-black w3-padding-32">
+    <p>© 2025 MidoraX Dynamics. All rights reserved.</p>
+    <div class="w3-xlarge">
+      <i class="fa fa-facebook-official w3-hover-opacity"></i>
+      <i class="fa fa-instagram w3-hover-opacity"></i>
+      <i class="fa fa-twitter w3-hover-opacity"></i>
+      <i class="fa fa-linkedin w3-hover-opacity"></i>
+    </div>
   </footer>
+
+  <script>
+    function w3_open() {
+      document.getElementById("mySidebar").style.display = "block";
+    }
+    function w3_close() {
+      document.getElementById("mySidebar").style.display = "none";
+    }
+  </script>
 </body>
 </html>
