@@ -1,73 +1,313 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>MidoraX Dynamics | Contact</title>
-  <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <title>Contact Us | MidoraX Dynamics</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <!-- W3.CSS and Font Awesome -->
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+  <!-- Custom Styles -->
+  <style>
+    body, h1, h2, h3, h4, h5, h6 {
+      font-family: "Raleway", sans-serif;
+    }
+
+    /* Hero Section */
+    .hero-contact {
+      background: url('images/contact-hero.jpg') no-repeat center center/cover;
+      min-height: 50vh;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      position: relative;
+    }
+
+    .hero-contact::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Contact Section Layout */
+    .contact-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 40px;
+      padding: 60px 20px;
+      background: #f7f7f7;
+    }
+
+    .contact-info, .contact-form-box {
+      background: #fff;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      border-radius: 10px;
+      padding: 30px;
+      flex: 1 1 400px;
+      max-width: 500px;
+    }
+
+    .contact-info h2, .contact-form-box h2 {
+      margin-bottom: 20px;
+      color: #00354a;
+    }
+
+    .contact-info p {
+      font-size: 16px;
+      margin: 15px 0;
+    }
+
+    .contact-info i {
+      color: #00aaff;
+      margin-right: 10px;
+    }
+
+    /* Restore Original Social Icons Effects */
+    .social-ul {
+      display: flex;
+      justify-content: center;
+      margin-top: 40px;
+      padding: 0;
+    }
+
+    .social-ul li {
+      list-style: none;
+    }
+
+    .social-ul li a {
+      width: 80px;
+      height: 80px;
+      background-color: #fff;
+      text-align: center;
+      line-height: 80px;
+      font-size: 35px;
+      margin: 0 10px;
+      display: block;
+      border-radius: 50%;
+      position: relative;
+      overflow: hidden;
+      border: 3px solid #fff;
+      z-index: 1;
+      transition: 0.5s;
+    }
+
+    .social-ul li a .icon {
+      position: relative;
+      color: #262626;
+      transition: 0.5s;
+      z-index: 3;
+    }
+
+    .social-ul li a:hover .icon {
+      color: #fff;
+      transform: rotateY(360deg);
+    }
+
+    .social-ul li a:before {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      transition: 0.5s;
+      z-index: 2;
+    }
+
+    .social-ul li a:hover:before {
+      top: 0;
+    }
+
+    .social-ul li:nth-child(1) a:before {
+      background: #3b5999; /* Facebook */
+    }
+
+    .social-ul li:nth-child(2) a:before {
+      background: #55acee; /* Twitter */
+    }
+
+    .social-ul li:nth-child(3) a:before {
+      background: #0077b5; /* LinkedIn */
+    }
+
+    .social-ul li:nth-child(4) a:before {
+      background: #dd4b39; /* Google Plus */
+    }
+
+    /* Contact Form */
+    .contact-form input, .contact-form textarea {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0 20px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      resize: vertical;
+    }
+
+    .contact-form button {
+      background-color: #00354a;
+      color: #fff;
+      border: none;
+      padding: 14px 25px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .contact-form button:hover {
+      background-color: #00aaff;
+    }
+
+    iframe {
+      border-radius: 10px;
+      border: none;
+      width: 100%;
+      height: 400px;
+      margin-top: 40px;
+    }
+
+    footer {
+      background-color: #00354a;
+      color: white;
+      padding: 20px 10px;
+      text-align: center;
+    }
+
+    footer .footer-icons a {
+      margin: 0 10px;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    footer .footer-icons a:hover {
+      color: #00aaff;
+    }
+
+    @media (max-width: 768px) {
+      .hero-contact {
+        min-height: 40vh;
+      }
+
+      .social-ul li a {
+        width: 60px;
+        height: 60px;
+        font-size: 25px;
+        line-height: 60px;
+      }
+    }
+  </style>
 </head>
+
 <body>
-  <header>
-    <nav>
-      <h2 class="logo">MidoraX Dynamics</h2>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="contact.html" class="active">Contact</a></li>
-        <li><a href="login.html">Login/Sign Up</a></li>
-      </ul>
-    </nav>
-  </header>
 
-  <section class="page-content">
-    <h1>Contact Us</h1>
-    <p>We'd love to hear from you! Fill out the form below or reach us at:</p>
-    <p><i class="fas fa-envelope" style="color:#c7e617;"></i>
-      <a href="mailto:info@midorax.com">info@midorax.com</a></p>
-    <p><a href="+254105700782">
-      <i class="fas fa-phone" style="color:#2919bb;"></i>
-      : +254105700782 </a></p>    
-      <a href="https://wa.me/+254105700782?text=Hello%2C%20I%27d%20like%20to%20inquir%20on%20your%20Technology%20Solutions." target="_blank">
-        <i class="fab fa-whatsapp" style="font-size:50px; color:green;"></i>
+  <!-- Navbar -->
+  <div class="w3-top">
+    <div class="w3-bar w3-white w3-card" id="myNavbar">
+      <a href="index.html" class="w3-bar-item w3-button w3-wide">MIDORAX</a>
+      <div class="w3-right w3-hide-small">
+        <a href="index.html" class="w3-bar-item w3-button">HOME</a>
+        <a href="about.html" class="w3-bar-item w3-button">ABOUT</a>
+        <a href="services.html" class="w3-bar-item w3-button">SERVICES</a>
+        <a href="contact.html" class="w3-bar-item w3-button w3-text-blue">CONTACT</a>
+        <a href="login.html" class="w3-bar-item w3-button">LOGIN</a>
+      </div>
+      <a href="javascript:void(0)" class="w3-bar-item w3-button w3-hide-large w3-hide-medium" onclick="w3_open()">
+        <i class="fa fa-bars"></i>
       </a>
-      
+    </div>
+  </div>
 
-    <form class="contact-form" action="send_mail.php" method="post">
-      <label for="name">Name:</label>
-      <input type="text" id="name" placeholder="Your Name" />
+  <!-- Sidebar for small screens -->
+  <nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
+    <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button">Close ×</a>
+    <a href="index.html" onclick="w3_close()" class="w3-bar-item w3-button">HOME</a>
+    <a href="about.html" onclick="w3_close()" class="w3-bar-item w3-button">ABOUT</a>
+    <a href="services.html" onclick="w3_close()" class="w3-bar-item w3-button">SERVICES</a>
+    <a href="contact.html" onclick="w3_close()" class="w3-bar-item w3-button">CONTACT</a>
+    <a href="login.html" onclick="w3_close()" class="w3-bar-item w3-button">LOGIN</a>
+  </nav>
 
-      <label for="email">Email:</label>
-      <input type="email" id="email" placeholder="Your Email" />
-
-      <label for="message">Message:</label>
-      <textarea id="message" rows="5" placeholder="Your Message"></textarea>
-
-
-      <button type="submit">Send</button>
-    </form>
-  </section>
-
-  <!-- Map Section -->
-  <section class="map-section">
-    <h2>Find Us</h2>
-    <div class="map-container">
-      <!-- Example: Google Maps Iframe -->
-      <iframe 
-      
-      src = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15955.033366806568!2d37.4575419!3d-0.5078649!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x18262d54262d9ceb:0xedf77f135231ed2e!2sUOEM%20Comp%20Lab%203!5e0!3m2!1sen!2sus!4v1681881489796!5m2!1sen!2sus"
-        width="600" 
-        height="450" 
-        style="border:0;" 
-        allowfullscreen="" 
-        loading="lazy">
-      </iframe>
+  <!-- Hero Section -->
+  <section class="hero-contact">
+    <div class="hero-content">
+      <h1 class="w3-xxlarge">Get in Touch</h1>
+      <p class="w3-large">We'd love to hear from you!</p>
     </div>
   </section>
 
+  <!-- Contact Section -->
+  <div class="contact-container">
+
+    <!-- Contact Info -->
+    <div class="contact-info">
+      <h2>Contact Information</h2>
+      <p><i class="fas fa-envelope"></i> <a href="mailto:info@midorax.com">info@midorax.com</a></p>
+      <p><i class="fas fa-phone"></i> <a href="tel:+254105700782">+254 105 700 782</a></p>
+      <p><i class="fab fa-whatsapp" style="color:green;"></i>
+        <a href="https://wa.me/254105700782?text=Hello%20I%27d%20like%20to%20inquire%20about%20your%20services.">Chat on WhatsApp</a>
+      </p>
+
+      <!-- Animated Social Media Icons -->
+      <ul class="social-ul">
+        <li><a href="#"><i class="fab fa-facebook-f icon"></i></a></li>
+        <li><a href="#"><i class="fab fa-twitter icon"></i></a></li>
+        <li><a href="#"><i class="fab fa-linkedin-in icon"></i></a></li>
+        <li><a href="#"><i class="fab fa-google-plus-g icon"></i></a></li>
+      </ul>
+    </div>
+
+    <!-- Contact Form -->
+    <div class="contact-form-box">
+      <h2>Send a Message</h2>
+      <form class="contact-form" action="send_mail.php" method="post">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" rows="6" required></textarea>
+        <button type="submit"><i class="fa fa-paper-plane"></i> Send Message</button>
+      </form>
+    </div>
+
+  </div>
+
+  <!-- Google Map -->
+  <div class="w3-container w3-center">
+    <h2>Our Location</h2>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15955.033366806568!2d37.4575419!3d-0.5078649!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x18262d54262d9ceb:0xedf77f135231ed2e!2sUOEM%20Comp%20Lab%203!5e0!3m2!1sen!2sus!4v1681881489796!5m2!1sen!2sus" allowfullscreen loading="lazy" title="MidoraX Location Map"></iframe>
+  </div>
+
+  <!-- Footer -->
   <footer>
-    <p>© 2025 MidoraX Dynamics. All rights reserved.</p>
+    <p>&copy; 2025 MidoraX Dynamics. All rights reserved.</p>
+    <div class="footer-icons">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+    </div>
   </footer>
+
+  <!-- Sidebar Functions -->
+  <script>
+    function w3_open() {
+      document.getElementById("mySidebar").style.display = "block";
+    }
+
+    function w3_close() {
+      document.getElementById("mySidebar").style.display = "none";
+    }
+  </script>
+
 </body>
 </html>
