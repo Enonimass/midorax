@@ -1,45 +1,37 @@
-// Example JavaScript for simple interactions
-
-// Add a simple function to handle contact form submission
+// Wait for DOM content to load
 document.addEventListener("DOMContentLoaded", () => {
-  const contactForm = document.querySelector(".contact-form");
-  if (contactForm) {
-    contactForm.addEventListener("submit", (event) => {
-      event.preventDefault();
-      alert("Thank you for your message! We'll be in touch soon.");
-      contactForm.reset();
+
+    // Toggle mobile menu (handled via inline functions in our HTML for simplicity)
+  
+    // Example: Sticky navbar background change on scroll
+    window.addEventListener("scroll", () => {
+      const navbar = document.getElementById("myNavbar");
+      if (window.scrollY > 50) {
+        navbar.style.background = "#00354a"; // Darker background on scroll
+      } else {
+        navbar.style.background = "#fff";
+      }
     });
-  }
-});
-
-
-// script.js
-document.addEventListener("DOMContentLoaded", () => {
-  const hamburger = document.getElementById("hamburger");
-  const navMenu = document.querySelector(".nav-menu");
-
-  // Toggle mobile menu
-  hamburger.addEventListener("click", () => {
-    navMenu.classList.toggle("active");
-  });
-
-  // Example: sticky nav background change on scroll
-  window.addEventListener("scroll", () => {
-    const navbar = document.querySelector(".navbar");
-    if (window.scrollY > 50) {
-      navbar.style.background = "#00354a"; // slightly different color when scrolled
-    } else {
-      navbar.style.background = "#0c1e2b";
+  
+    // Contact form submission alert (if present)
+    const contactForm = document.querySelector(".contact-form");
+    if (contactForm) {
+      contactForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+        alert("Thank you for reaching out! We'll get back to you soon.");
+        contactForm.reset();
+      });
     }
-  });
-
-  // Optional: simple contact form submission
-  const contactForm = document.querySelector(".contact-form");
-  if (contactForm) {
-    contactForm.addEventListener("submit", (e) => {
-      e.preventDefault();
-      alert("Thank you for reaching out! We'll get back to you soon.");
-      contactForm.reset();
+  
+    // Slide-in images effect (corrected getBoundingClientRect())
+    const images = document.querySelectorAll('.slide-in');
+    window.addEventListener('scroll', () => {
+      images.forEach(image => {
+        const rect = image.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 50) {
+          image.classList.add('visible');
+        }
+      });
     });
-  }
-});
+  });
+  
